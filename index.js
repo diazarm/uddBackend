@@ -13,8 +13,8 @@ app.get("/saludo" , (req, res)=>{
     res.json({msg:"saludos desde express!"})
 })
 
-app.get("/mensaje", (req, res)=>{
-    const {nombre, apellido } = req.query;
+app.post("/mensaje", (req, res)=>{
+    const {nombre, apellido } = req.body;
     res.json({mensaje : `saludos a ${nombre} ${apellido}`}) 
 })
 

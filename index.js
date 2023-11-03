@@ -1,4 +1,5 @@
 const express = require('express')
+const clientRoute = require('./src/routes/clientRoute');
 
 const app = express();
 
@@ -21,6 +22,10 @@ app.get("/dni/:id", (req, res)=>{
     const {id} = req.params;
     res.send(`el dni es: ${id}`)
 })
+
+
+app.use("/", clientRoute);
+
 
 app.listen(port, ()=>{
     console.log(`server on line in port ${port}`);
